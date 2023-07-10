@@ -1,6 +1,7 @@
 resource "google_compute_instance" "proxy_instance" {
     name = "proxy-instance"
     machine_type = var.machine.micro
+    zone = var.zone.default
     tags = ["http-server"]
     allow_stopping_for_update = true
 
