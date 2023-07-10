@@ -1,0 +1,79 @@
+variable "machine" {
+  type = object({
+    micro = string
+    small = string
+  })
+  default = {
+    micro = "e2-micro"
+    small = "e2-small"
+  }
+}
+
+variable "zone" {
+  type = object({
+    default      = string
+    alternative  = string
+    alternative1 = string
+  })
+  default = {
+    default      = "us-central1-a"
+    alternative  = "us-east1-b"
+    alternative1 = "us-east4-a"
+  }
+}
+
+variable "image" {
+  type        = string
+  description = "VM OS system image"
+  default     = "ubuntu-os-cloud/ubuntu-minimal-2004-lts"
+}
+
+variable "webserver" {
+  type = object({
+    firstname = string
+    lastname  = string
+    username  = string
+    password  = string
+    email     = string
+    role      = string
+  })
+  default = {
+    username  = "admin"
+    password  = "admin"
+    firstname = "Oscar"
+    lastname  = "Riordan"
+    email     = "dummy@replace.com"
+    role      = "Admin"
+  }
+}
+
+variable "flower" {
+  type = object({
+    username = string
+    password = string
+  })
+  default = {
+    username = "admin"
+    password = "admin"
+  }
+}
+
+variable "vpc_network_name" {
+  type    = string
+  default = "airflow-network"
+}
+
+variable "internal_firewall_ip_ranges" {
+  type = list(string)
+  default = [
+    "10.128.0.0/20",
+    "10.142.0.0/20",
+    "10.150.0.0/20",
+    "10.138.0.0/20"
+  ]
+}
+
+variable "number_of_workers" {
+  type    = number
+  default = 1
+}

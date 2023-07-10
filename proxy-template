@@ -1,0 +1,13 @@
+server {
+        server_name SERVER-NAME;
+        root /var/www/;
+
+        index index.html;
+        location / {
+                proxy_pass 127.0.0.1:8080;
+        }
+
+        location /flower/ {
+                proxy_pass 127.0.0.1:5555/flower/;
+        }
+}
