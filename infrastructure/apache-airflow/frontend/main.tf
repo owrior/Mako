@@ -1,5 +1,5 @@
 resource "google_compute_instance" "frontend_instance" {
-  name = "frontend_instance"
+  name = "frontend-instance"
   machine_type = var.machine.small
   zone = var.zone.default
   allow_stopping_for_update = true
