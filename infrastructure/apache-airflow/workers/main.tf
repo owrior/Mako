@@ -2,7 +2,7 @@ resource "google_compute_instance" "worker_instance" {
     name = var.instance_name
     machine_type = var.machine.small
     allow_stopping_for_update = true
-    zone = var.zone
+    zone = var.zone.default
 
     metadata = {
       startup-script = <<-EOF

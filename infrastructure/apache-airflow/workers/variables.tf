@@ -6,7 +6,11 @@ variable "machine" {
 }
 
 variable "zone" {
-    type = string
+    type = object({
+      default = string
+      alternative = string
+      alternative1 = string
+    })
 }
 
 variable "instance_name" {
