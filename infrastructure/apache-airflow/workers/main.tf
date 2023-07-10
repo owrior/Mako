@@ -1,6 +1,6 @@
 resource "google_compute_instance" "worker_instance" {
     name = var.instance_name
-    machine_type = var.machine.small
+    machine_type = var.machine.micro
     allow_stopping_for_update = true
     zone = var.zone.default
 

@@ -1,6 +1,6 @@
 resource "google_compute_instance" "backend_instance" {
     name = "backend-instance"
-    machine_type = var.machine.small
+    machine_type = var.machine.micro
     zone = var.zone.default
     allow_stopping_for_update = true
 
